@@ -560,7 +560,7 @@ by(rw$alcohol, rw$rating, summary)
 
 This graph was interesting because it showed how excellent wines tended to have a higher alcohol content all else equal. By this I mean certain precursors had to exist for alcohol to be the predominant determininant for quality. 
 
-### Plot Two: Acids & Sulphates vs. Quality
+### Plot Two: Alcohol & Sulphates vs. Quality
 ```{r echo=FALSE, Plot_Two}
 
 # Arrange scatterplots together for important variables to 
@@ -583,7 +583,7 @@ Observe that lower sulphates content typically leads to a bad wine with alcohol 
 
 This graph makes it fairly clear that both sulphates and alcohol content contribute to quality. One thing I found fairly interested was that when sulphates were low, alcohol level still varied by 3%, but the wine was still rated bad. Low sulphate content appears to contribute to bad wines.
 
-### Plot Three
+### Plot Three: Volatile Acidity vs Quality
 ```{r echo=FALSE, Plot_Three}
 
 # Create conditional density plot with two of the arguably most 
@@ -598,8 +598,6 @@ cdplot(rating ~ volatile.acidity, data = rw,
 ### Description Three
 
 As we can see, when volatile acidity is greater than 1, the probability of the wine being excellent is zero. When volatile acidity is either 0 or 0.3, there is roughly a 40% probability that the wine is excellent. However, when volatile acidity is between 1 and 1.2 there is an 80% chance that the wine is bad. Moreover, any wine with a volatile acidity greater than 1.4 has a 100% chance of being bad. Therefore, volatile acidity is a good predictor for bad wines.
-
-In contrast, alcohol content is a great indicator for an excellent wine. An alcohol content of around 13.5% indicates a 60% probability of the wine being excellent. In fact, at the alcohol content increases, the likelihood of the wine being excellent increases.
 
 ------
 
