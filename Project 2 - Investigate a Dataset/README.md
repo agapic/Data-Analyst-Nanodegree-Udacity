@@ -1,7 +1,10 @@
 
+# Titanic Data Analysis
+## By Andrew Gapic
+
 # Questions
 
-The purpose of this data investigation is to determine what factors (if any) made it more like that a person survived. Specifically, three variables were analyzed: class, sex, and age. The hypothesis is that higher class passengers that are female and younger had a higher chance of surviving. 
+The purpose of this data investigation is to determine what factors (if any) made it more likely that a person survived on the Titanic. Specifically, three variables were analyzed: class, sex, and age. The hypothesis is that higher class passengers, females, and younger people had a higher chance of surviving. 
 
 Another question posed for this project is whether the average fare by age differed when embarking from Southampton (labelled S in the data). It is hypothesized that there is no significant difference in the average fare based on age.
 
@@ -250,7 +253,7 @@ print 'Proportion of female survivals: ' + \
 
 # Discussion
 
-Proportionately more males died relative to females. This makes sense as females in a cultural context are typically preferred over males as they can give birth to new life. However, it doesn't necessarily point to causation. There is only a correlation here.
+Proportionately more males died relative to females. Historically, "women and children first" is a phrase that was first coined on the British HMS Birkenhead, which sunk in 1852. (more info [here](http://search.proquest.com/openview/3954c2a020a005a067cc68fb82c3b6af/1?pq-origsite=gscholar)). Titanic, which also departed from Britain, likely encountered the same informal policy, handed down culturally through the British seas.
 
 To test if there is a statistical difference between the two genders, we conduct a difference in proportions test using a significant level of <b>0.05</b>
 Let p1 be the proportion of male survivals, let p2 be the proportion of female survivals.
@@ -402,7 +405,7 @@ The plot above shows that there is a very faint correlation between Age and Fare
 
 There were several limitations of this analysis based on the data given.
 
-First, there was only 12 columns of data to work with with essentially three of them being irrelevant. Additionally, there was only 891 rows of data, of which 179 were missing important fields such as age. Since the data was obviously limited (it was from the titanic which has a finite amount of people), adding other columns such as the passenger's race and bodyweight would be rather useful. 
+First, there was only 12 columns of data to work with with essentially three of them being irrelevant. Additionally, there were only 891 rows of data, of which 179 were missing important fields such as age. Since the data was obviously limited (it was from the titanic which has a finite amount of people), adding other columns such as the passenger's race and bodyweight would be rather useful. 
 
 Second, passenger class is a very vague name for a column. I am not sure whether it refers to annual income, or other factors such as education. In any case, it would be interesting to see how education played a role in survival. 
 
@@ -435,12 +438,8 @@ A 2D scatter plot was created to test the relationship between age and fare. The
 
 ### Final Words
 
-Overall, the strongest evidence for survival pointed to the passenger's socioeconomic class. One possible explanation might be that the higher the person's class, the more educated they were. With more education, the people may have a better idea how to survive. Additionally, people with different classes certainly have different mindsets. Lower passenger class might be more willing to sacrifice themselves to save the greater good, especially because lower class individuals tend to be more adept at labour.
-
-Gender also played a close second. One explanation for gender would be that females are preferred to save because they can continue to produce newborns, while males cannot. Age didn't have any impact with regards to a passenger's survival, which is surprising as I would think that younger people would be allowed to live more often since they have more of their life ahead of them. 
+Overall, the strongest evidence for survival pointed to the passenger's socioeconomic class. First class passengers had access to the upper decks, which were typically off limits to third class passengers, who were in the steerage (lower deck). Being in the lower deck of the ship put third class passengers at a disadvantage; they would inevitably have less information regarding any iminent dangers. Even more, the lifeboats were brought near the first-class cabins, which meant the first-class passengers received a "first-class ticket" to safety.  
 
 
+Gender also played a close second. "Women and children" was certainly a phrase that nicely sums up this gender discrepancy (not the children part though). Age didn't have any impact with regards to a passenger's survival, which is surprising as I would think that younger people would be allowed to live more often since they have more of their life ahead of them. 
 
-```python
-
-```
