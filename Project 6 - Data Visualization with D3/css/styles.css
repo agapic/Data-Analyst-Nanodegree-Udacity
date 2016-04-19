@@ -1,17 +1,47 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+.tiny {
+  font-size: 10px;
+  font-family: 'Open Sans', 'sans-serif';
+}
+
 .small { 
-    font-size: 8pt; font-family: arial; 
+    font-size: 12px; 
+    font-family: 'Open Sans', 'sans-serif';
 }
 
-div.event_buttons {
-    position: fixed;
-    top: 5px;
-    left: 50px;
+h2 {
+    text-align: center;
+    color: black;
+    font-family: 'Open Sans', 'sans-serif';
 }
 
-div.event_buttons div {
-    background-color: rgb(251, 201, 127);
-    padding: 3px;
-    margin: 7px;
+.btn {
+  border-radius: 5px;
+  padding: 5px 15px;
+  font-size: 22px;
+  font-family: 'Open Sans', 'sans-serif';
+  text-decoration: none;
+  margin: 20px;
+  margin-top: -10px;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+}
+
+.btn:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px;
+}
+
+.red {
+  background-color: #e74c3c;
+  box-shadow: 0px 5px 0px 0px #CE3323;
+}
+
+.red:hover {
+  background-color: #FF6656;
 }
 
 #line {
