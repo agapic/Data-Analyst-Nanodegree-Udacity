@@ -61,6 +61,6 @@ distances without hovering over the people. Otherwise, it looks cool. I had fun 
 
 [D3 Documentation](https://github.com/mbostock/d3/wiki/API-Reference)
 
-[NY Times Data Visualization for Track and Field Events (Inspiration](http://www.nytimes.com/interactive/2012/08/05/sports/olympics/the-100-meter-dash-one-race-every-medalist-ever.html?_r=2&)
+[NY Times Data Visualization for Track and Field Events (Inspiration)](http://www.nytimes.com/interactive/2012/08/05/sports/olympics/the-100-meter-dash-one-race-every-medalist-ever.html?_r=2&)
 
 [Track and Field World Records Data Set](http://www.webcitation.org/6B6G1X4mj)
