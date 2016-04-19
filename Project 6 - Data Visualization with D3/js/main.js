@@ -261,6 +261,7 @@ function update(dist) {
 function addRunner() {
     var element = document.getElementById("addRunner");
     var runner = element.value;
+    if (runner === "" || isNaN(runner)) return;
     numRunners++;
     customRunners.push({name: "Runner" + numRunners, year: 2009 + numRunners, time: +runner});
     update(distance);
