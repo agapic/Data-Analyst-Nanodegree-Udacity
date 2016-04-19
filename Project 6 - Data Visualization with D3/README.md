@@ -42,13 +42,13 @@ graph or even add other things such as animals, potentially faster humans, etc. 
 "There isn't any title and when you add someone who is too slow you can't even see them on the graph. I was sort of confused upon first glance
 because I wasn't sure what was happening."
 
-**These changes were taken into account in commit 1/2
+**These changes were taken into account in commit 1 and 2**
 
 ### Person 2
 "I think it'd make sense if you had an axis that displays the actual years of the runner, no? I mean it looks like you're trying to 
 show some sort of relationship between the years of the records based on what you told me. So I think that would be cool."
 
-**These changes were taken into account in commit 2
+**These changes were taken into account in commit 2**
 
 ### Person 3
 
@@ -60,5 +60,7 @@ distances without hovering over the people. Otherwise, it looks cool. I had fun 
 ## Resources
 
 [D3 Documentation](https://github.com/mbostock/d3/wiki/API-Reference)
+
 [NY Times Data Visualization for Track and Field Events (Inspiration](http://www.nytimes.com/interactive/2012/08/05/sports/olympics/the-100-meter-dash-one-race-every-medalist-ever.html?_r=2&)
+
 [Track and Field World Records Data Set](http://www.webcitation.org/6B6G1X4mj)
