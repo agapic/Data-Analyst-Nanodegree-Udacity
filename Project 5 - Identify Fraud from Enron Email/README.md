@@ -1,13 +1,13 @@
 # Identifying Fraud from the Enron Dataset
 ### Written by Andrew Gapic
 
-##Introduction
+## Introduction
 
 In the year 2000, Enron was known as one of the largest energy companies in the United States, claiming nearly $111 billion in revenues. At the end of 2001, it was revealed that there was widespread corporate fraud. Essentially all of Enron's nonexistent profits were created through a method called "mark-to-market" accounting, in which they would report profits even though they didn't earn a single dime. Even worse, they were solely responsible for the California electricity crisis, by which they performed large-scale blackouts to seize arbitrage opportunities.
 
 The goal for this project is to analyze the characteristics of employees who worked at Enron during the crisis to predict if they are a person of interest ("POI"). Various resources (documentaries, news articles, etc.) were used to label people in the data set as POIs if they were previously indicted (that is, there is a 100% chance they were guilty). The application of machine learning to this project may be of assistance if we take the predictions from the Enron data model and apply them to other companies facing similar circumstances, through identifying persons of interest (we are using a naive assumption here by assuming fraud at other companies is similar to that of Enron, which may or may not be the case).
 
-##Overview and Outliers
+## Overview and Outliers
 
 The dataset consisted of 146 records with 20 features (14 financial features, 6 e-mail features) and 1 label `POI`. Overall, there were 18 POIs identified beforehand and labelled accordingly. Three data points were removed: 
 
@@ -17,11 +17,11 @@ The dataset consisted of 146 records with 20 features (14 financial features, 6 
 
 * `The Travel Agency in the Park`  -- uncertain as to what this means -- could be an input error
 
-###Record Reconstruction
+### Record Reconstruction
 
 There were two records in the dataset that looked suspicious: `BELFER ROBERT` and `BHATNAGAR SANJAY`. Spot checking the PDF `enron61702insiderpay.pdf`, included with this folder, I found that the data entered into `final_project_dataset.pkl` was shifted one column to the right relative to the PDF. It was clear as the total stock value was actually the deferred stock value in the PDF. I reconstructed both Sanjay's and Robert's data based on the PDF since they had important data that would aid us in our analysis.
 
-##Feature Selection/Engineering
+## Feature Selection/Engineering
 
 <table>
   <tr>
@@ -103,7 +103,7 @@ The total stock and payments field appeared to work out well, with a score of 17
 
 Each feature was scaled using MinMaxScaler, scored using SelectKBest, and then run under various classification algorithms. This was all done in a pipeline as to avoid information leakage (the MinMax of the entire data set will indeed be different than the MinMax of the training and test data sets).
 
-##Algorithm
+## Algorithm
 
 The two different algorithms used were decision tree classifiers and logistic regression, with logistic regression having a higher performance. Logistic regression works out nicely as it thrives in classifying data as a positive or a negative. In our case, it provided excellent results when it came to classifying a person as a POI or not.
 
@@ -253,7 +253,7 @@ The final classifier algorithm chosen was logistic regression with the following
 
 The most interesting thing I discovered whilst manually tuning the data was that when e-mail features were excluded from the final features, the recall rate, precision rate, and accuracy dropped significantly (0.4, 0.25, and 0.79 respectively for logistic regression). SelectKBest had no e-mail features included in the top features, and it turns out that the inclusion of e-mail features was necessary to achieve better results. In fact, the recall rate doubled to 0.8 when the ratio of POI e-mails sent/received to total e-mails sent/received was included in the data. This makes sense as POIs are more likely to interact with other POIs since trying to hide corporate fraud and conspiracy is certainly a daunting task and requires significant collaboration.
 
-##Validation
+## Validation
 
 Validation is important because it allows us to find a valid compromise between bias and variance. High bias relates to underfitting the data and high variance relates to overfitting it. Ideally, we want the best of both worlds and so splitting our data into training sets and testing sets. 
 
@@ -261,7 +261,7 @@ I validated my analysis in an `evaluate` function located in `selection_and_tuni
 
 Using `best_estimator_` attribute from GridSearchCV, I cross-validated the data using 1000 folds StratifiedShuffleSplit (`test_classifier` in tester.py. StratifiedShuffleSplit returns _stratified_ splits, meaning that the same (or very similar) percentage of POIs is included for each test set created as in the entire set. I confirmed this by using some simple math -- in the entire data set out POI ratio is 18/143 = 12.59%. Using 1000 folds and a random state of 0.42, StratifiedShuffleSplit used a test size of 15 with 2 POIs -- 2/15 = 13.3% ~= 12.59%. Therefore, performing stratified splits on our data helps improve our validation significantly.
 
-##Evaluation
+## Evaluation
 
 As shown above, the three evaluation metrics I used were recall, precision, and accuracy. Recall that the results from the `train_test_split` were as follows:
 
@@ -285,7 +285,7 @@ While tester.py reported worse results than my own evaluation, the most importan
 
 Another important point is how accuracy is a bad metric when dealing with this data, as the POI to non-POI ratio was extremely lopsided -- only 18 POIs were identified in a dataset of 143 records. If we were able to predict every person as 'innocent', we would get an accuracy rate of 87.41%, but our recall rate would be 0 and our precision would be 0. 
 
-##Conclusion
+## Conclusion
 
 Overall, I found this project to be very challenging and time consuming. As such, if time were not a scarce resource, I would certainly measure the performance of many more algorithms to see if I can do better. I was quite satisfied with logistic regression and I chose it because I learned how it's quite good for classification algorithms. Additionally, analyzing the e-mails would also have been quite useful, but only if the POIs were the ones writing them. Most commonly, top executives tend to have assistants that write e-mails for them, so it would be a very challenging task if that was taken into account. 
 
